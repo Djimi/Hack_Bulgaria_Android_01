@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".MyActivity"
+    android:background="#0011ff">
+
+    <ImageView
+        android:id="@+id/topLeft"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/holo_red_dark"/>
+
+    <ImageView
+        android:id="@+id/topRight"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/holo_red_dark"/>
+
+    <ImageView
+        android:id="@+id/bottomLeft"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/holo_red_dark"/>
+
+    <ImageView
+        android:id="@+id/bottomRight"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/holo_red_dark"/>
+
+    <ImageView
+        android:layout_height="100dp"
+        android:layout_width="40dp"
+        android:layout_toRightOf="@id/topLeft"
+        android:background="@android:color/white" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/bottomLeft"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:layout_toLeftOf="@id/bottomRight"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:layout_toLeftOf="@id/topRight"
+        android:background="@android:color/white"/>
+
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/topLeft"
+        android:background="@android:color/white"/>
+
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_above="@id/bottomLeft"
+        android:background="@android:color/white"/>
+
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/topRight"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/white"/>
+
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="30dp"
+        android:layout_above="@id/bottomRight"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/white"/>
+</RelativeLayout>
+<!-- From: file:/F:/Android_projects/Flag/app/src/main/res/layout/hard_flag.xml -->

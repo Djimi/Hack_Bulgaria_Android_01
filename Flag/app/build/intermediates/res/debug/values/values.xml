@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/F:/Android_projects/Flag/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <array name="rainbow">
+        <item>@color/bright_pink</item>
+        <item>@color/red</item>
+        <item>@color/orange</item>
+        <item>@color/yellow</item>
+        <item>@color/chartreuse</item>
+        <item>@color/green</item>
+        <item>@color/spring_green</item>
+        <item>@color/cyan</item>
+        <item>@color/azure</item>
+        <item>@color/blue</item>
+        <item>@color/violet</item>
+        <item>@color/magenta</item>
+    </array>
+
+    <color name="azure">#007FFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="bright_pink">#FF007F</color>
+    <color name="chartreuse">#7FFF00</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="green">#00FF00</color>
+    <color name="magenta">#FF00FF</color>
+    <color name="orange">#FF7F00</color>
+    <color name="red">#FF0000</color>
+    <color name="spring_green">#00FF7F</color>
+    <color name="violet">#7F00FF</color>
+    <color name="yellow">#FFFF00</color>
+    <!-- From: file:/F:/Android_projects/Flag/app/src/main/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="medium_flag_dimention">150dp</dimen>
+    <!-- From: file:/F:/Android_projects/Flag/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Flag</string>
+    <string name="hello_world">Hello world!</string>
+    <!-- From: file:/F:/Android_projects/Flag/app/src/main/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+</resources>

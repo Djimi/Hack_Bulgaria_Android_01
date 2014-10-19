@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="F:\Android_projects\Flag\app\src\main\res" >
+            <file
+                name="ic_launcher"
+                path="F:\Android_projects\Flag\app\src\main\res\drawable-hdpi\ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="F:\Android_projects\Flag\app\src\main\res\drawable-mdpi\ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="F:\Android_projects\Flag\app\src\main\res\drawable-xhdpi\ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="F:\Android_projects\Flag\app\src\main\res\drawable-xxhdpi\ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="my"
+                path="F:\Android_projects\Flag\app\src\main\res\menu\my.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="F:\Android_projects\Flag\app\src\main\res\values\dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="medium_flag_dimention" >150dp
+                </dimen>
+            </file>
+            <file
+                path="F:\Android_projects\Flag\app\src\main\res\values\strings.xml"
+                qualifiers="" >
+                <string name="hello_world" >Hello world!
+                </string>
+                <string name="action_settings" >Settings
+                </string>
+                <string name="app_name" >Flag
+                </string>
+            </file>
+            <file
+                path="F:\Android_projects\Flag\app\src\main\res\values\styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- Customize your theme here. -->
+                </style>
+            </file>
+            <file
+                path="F:\Android_projects\Flag\app\src\main\res\values-w820dp\dimens.xml"
+                qualifiers="w820dp-v13" >
+                <dimen name="activity_horizontal_margin" >64dp
+                </dimen>
+            </file>
+            <file
+                name="medium_flag"
+                path="F:\Android_projects\Flag\app\src\main\res\layout\medium_flag.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="bulgarian_flag"
+                path="F:\Android_projects\Flag\app\src\main\res\layout\bulgarian_flag.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="F:\Android_projects\Flag\app\src\main\res\values\colors.xml"
+                qualifiers="" >
+                <color name="magenta" >#FF00FF
+                </color>
+
+                <array name="rainbow" >
+                    <item>
+@color/bright_pink
+                    </item>
+                    <item>
+@color/red
+                    </item>
+                    <item>
+@color/orange
+                    </item>
+                    <item>
+@color/yellow
+                    </item>
+                    <item>
+@color/chartreuse
+                    </item>
+                    <item>
+@color/green
+                    </item>
+                    <item>
+@color/spring_green
+                    </item>
+                    <item>
+@color/cyan
+                    </item>
+                    <item>
+@color/azure
+                    </item>
+                    <item>
+@color/blue
+                    </item>
+                    <item>
+@color/violet
+                    </item>
+                    <item>
+@color/magenta
+                    </item>
+                </array>
+
+                <color name="red" >#FF0000
+                </color>
+                <color name="yellow" >#FFFF00
+                </color>
+                <color name="violet" >#7F00FF
+                </color>
+                <color name="spring_green" >#00FF7F
+                </color>
+                <color name="green" >#00FF00
+                </color>
+                <color name="blue" >#0000FF
+                </color>
+                <color name="orange" >#FF7F00
+                </color>
+                <color name="azure" >#007FFF
+                </color>
+                <color name="bright_pink" >#FF007F
+                </color>
+                <color name="chartreuse" >#7FFF00
+                </color>
+                <color name="cyan" >#00FFFF
+                </color>
+            </file>
+            <file
+                name="hard_flag"
+                path="F:\Android_projects\Flag\app\src\main\res\layout\hard_flag.xml"
+                qualifiers=""
+                type="layout" />
+        </source>
+        <source path="F:\Android_projects\Flag\app\build\generated\res\rs\debug" />
+        <source path="F:\Android_projects\Flag\app\build\generated\res\generated\debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="F:\Android_projects\Flag\app\src\debug\res" />
+    </dataSet>
+
+</merger>
