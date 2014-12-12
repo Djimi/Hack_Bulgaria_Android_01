@@ -1,5 +1,9 @@
 package com.example.damyan.gesture_image;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.Button;
+
+import java.util.ArrayList;
 
 
 public class MyActivity extends Activity{
@@ -36,6 +44,43 @@ public class MyActivity extends Activity{
 
     GestureDetector gd;
 
+    Button playButton;
+    Button checkPointButton;
+    Button resetAnimationButton;
+
+    float startPictureX;
+    float startPictureY;
+
+
+    AnimatorSet animatorSet;
+    int durationOfAnimation = 500;
+    ArrayList<Animator> animators;
+
+    float[] lastState;
+
+    private void init(){
+        screen = findViewById(R.id.screen);
+        picture = findViewById(R.id.picture);
+        animatorSet = new AnimatorSet();
+        lastState = new float[5];
+        animators = new ArrayList<Animator>();
+
+        startPictureX = picture.getX();
+        startPictureY = picture.getY();
+        Log.d("Coordinates", "Init X: " + startPictureX);
+
+        Log.d("Coordinates", "Init Y: " + startPictureY);
+
+        lastState[0] = picture.getX();
+        lastState[1] = picture.getY();
+        lastState[2] = picture.getRotation();
+        lastState[3] = picture.getScaleX();
+        lastState[4] = picture.getScaleY();
+
+        animatorSet.setInterpolator(new AccelerateDecelerateInterpolator());
+
+        getActionBar().hide();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +88,8 @@ public class MyActivity extends Activity{
         setContentView(R.layout.activity_my);
 
 
-        screen = findViewById(R.id.screen);
-        picture = findViewById(R.id.picture);
+        init();
 
-
-
-        getActionBar().hide();
 
         screen.setOnTouchListener(new MyTouchListener());
 
@@ -56,31 +97,88 @@ public class MyActivity extends Activity{
             @Override
             public boolean onDoubleTap(MotionEvent e) {
                 Log.d("Click", "double tap");
+                picture.setX(startPictureX);
+                picture.setY(startPictureY);
                 picture.setTranslationY(0);
                 picture.setTranslationX(0);
                 picture.setRotation(0);
                 picture.setScaleX(1);
                 picture.setScaleY(1);
 
-                return false;
+                return true;
             }
         });
 
         picture.setOnTouchListener(new View.OnTouchListener() {
 
-
-            @Override
+           @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Log.d("Click", "In touch: " + isInImage);
+
 //                gd.onTouchEvent(event);
 
-                if(event.getActionMasked() == MotionEvent.ACTION_DOWN){
-                    isInImage = true;
+               if(event.getActionMasked() == MotionEvent.ACTION_DOWN){
+                   isInImage = true;
+
+               }
+
+               return false;
+           }
+
+        });
+
+        playButton = (Button)findViewById(R.id.playButton);
+        resetAnimationButton = (Button)findViewById(R.id.resetAnimationButton);
+        checkPointButton = (Button)findViewById(R.id.makeCheckPointButton);
+
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                for(int i = 0; i < animators.size(); ++i){
+                    Log.d("Animators", "Animator " + i + " " + animators.get(i));
                 }
-
-                return false;
+                animatorSet.playSequentially(animators);
+                animatorSet.setDuration(durationOfAnimation);
+                animatorSet.start();
+                animatorSet = new AnimatorSet();
             }
+        });
 
+        resetAnimationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                animatorSet = new AnimatorSet();
+                animators.clear();
+            }
+        });
+
+        checkPointButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                PropertyValuesHolder translationX = PropertyValuesHolder.ofFloat("x", lastState[0], picture.getX());
+                PropertyValuesHolder translationY = PropertyValuesHolder.ofFloat("y", lastState[1], picture.getY());
+
+                PropertyValuesHolder rotation = PropertyValuesHolder.ofFloat("rotation", lastState[2], picture.getRotation());
+
+                PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX", lastState[3], picture.getScaleX());
+                PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY", lastState[4], picture.getScaleY());
+
+                ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(picture, translationX, translationY, rotation, scaleX, scaleY);
+
+                animators.add(animator);
+
+
+                lastState[0] = picture.getX();
+                lastState[1] = picture.getY();
+                lastState[2] = picture.getRotation();
+                lastState[3] = picture.getScaleX();
+                lastState[4] = picture.getScaleY();
+
+                Log.d("Coordinates", "CheckPoint X: " + lastState[0]);
+                Log.d("Coordinates", "CheckPoint Y: " + lastState[1]);
+            }
         });
 
     }
@@ -91,10 +189,7 @@ public class MyActivity extends Activity{
 
             if(!isInImage) return true;
 
-            gd.onTouchEvent(event);
-
-
-            Log.d("Click", "Root in touch");
+             gd.onTouchEvent(event);
 
             if(event.getPointerCount() == 1) {
 
@@ -121,8 +216,6 @@ public class MyActivity extends Activity{
 
                 if(event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN){
 
-//                    lastTangent = (event.getY(0) - event.getY(1))/(event.getX(0) - event.getX(1));
-
                    initializeFirstCoordinates(event);
                    initializeSecondCoordinates(event);
                    setOldPointBetweenFingersCoordinates((firstX + secondX)/2, (firstY + secondY)/2);
@@ -133,9 +226,8 @@ public class MyActivity extends Activity{
                 } else if(event.getActionMasked() == MotionEvent.ACTION_MOVE) {
 
                     float angle = (float)angleBetweenPivotLineAndLine(event); //new
-//                    Log.d("Angle ", "PIvotAngle: " + pivotLineAngle + "\n " + angleBetweenLineAndXAxis(event.getX(0), event.getY(0), event.getX(1), event.getY(1)) +"\n" + angle );
-                    picture.setRotation(picture.getRotation() + angle); //new
-//                    Log.d("Angle", "Rotation to: " + picture.getRotation());
+
+                     picture.setRotation(picture.getRotation() + angle); //new
 
 
 
@@ -152,7 +244,6 @@ public class MyActivity extends Activity{
 
                     pivotLineAngle = (pivotLineAngle + angle)%360;
 
-//                    Log.d("Click", "" + picture.getRotation());
 
                 } else if(event.getActionMasked() == MotionEvent.ACTION_POINTER_UP){
                     secondFingerJustUp = true;
@@ -165,6 +256,7 @@ public class MyActivity extends Activity{
         }
 
     }
+
 
     //takes coordinates of two points and calculate the angle between the pivot Line and
     //the line formed from this two points

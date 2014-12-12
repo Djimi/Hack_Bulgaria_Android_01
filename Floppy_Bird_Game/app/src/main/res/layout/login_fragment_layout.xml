@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <EditText
+        android:id="@+id/usernameField"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="username"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white"/>
+
+    <EditText
+        android:id="@+id/emailField"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/white"/>
+
+    <RadioGroup
+        android:id="@+id/schoolMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <RadioButton
+            android:id="@+id/SURadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SU"
+            android:textColor="@android:color/white"/>
+
+        <RadioButton
+            android:id="@+id/TURadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TU"
+            android:textColor="@android:color/white"/>
+
+        <RadioButton
+            android:id="@+id/TUESRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TUES"
+            android:textColor="@android:color/white"/>
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login"/>
+
+    <Button
+        android:id="@+id/play_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Again"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:padding="4dip"
+        android:visibility="invisible">
+    </ProgressBar>
+
+    <TextView
+        android:id="@+id/serverResponse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

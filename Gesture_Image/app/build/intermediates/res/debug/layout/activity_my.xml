@@ -5,13 +5,40 @@
     tools:context=".MyActivity"
     android:id="@+id/screen">
 
+
+
     <ImageView
         android:id="@+id/picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:src="@drawable/success"
+        android:src="@drawable/cool"
         android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:textStyle="italic|bold"/>
+
+    <Button
+        android:id="@+id/makeCheckPointButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Make Check Point"
+        android:textStyle="italic|bold"/>
+
+    <Button
+        android:id="@+id/resetAnimationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset Animation"
+        android:textStyle="italic|bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
 
 </RelativeLayout>
 <!-- From: file:/F:/Android_projects/Gesture_Image/app/src/main/res/layout/activity_my.xml -->

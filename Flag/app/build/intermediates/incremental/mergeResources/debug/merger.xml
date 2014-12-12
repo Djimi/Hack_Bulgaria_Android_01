@@ -47,6 +47,13 @@
                 </string>
                 <string name="app_name" >Flag
                 </string>
+                <string name="error_text" >Fail a Big Oneeeeeeee
+    Fail a Big Oneeeeeeee
+    Fail a Big Oneeeeeeee
+    Fail a Big OneeeeeeeeFail a Big Oneeeeeeee
+        Fail a Big Oneeeeeeee
+        Fail a Big Oneeeeeeee
+                </string>
             </file>
             <file
                 path="F:\Android_projects\Flag\app\src\main\res\values\styles.xml"
@@ -148,6 +155,16 @@
                 path="F:\Android_projects\Flag\app\src\main\res\layout\hard_flag.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="uber"
+                path="F:\Android_projects\Flag\app\src\main\res\layout\uber.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="wilhelm6"
+                path="F:\Android_projects\Flag\app\src\main\res\drawable-mdpi\wilhelm6.jpg"
+                qualifiers="mdpi-v4"
+                type="drawable" />
         </source>
         <source path="F:\Android_projects\Flag\app\build\generated\res\rs\debug" />
         <source path="F:\Android_projects\Flag\app\build\generated\res\generated\debug" />

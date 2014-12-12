@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MyActivity"
+    android:id="@+id/screen"
+    android:background="@android:color/white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:onClick="click">
+
+        <ImageView
+            android:id="@+id/angryBird"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:src="@drawable/angry_bird"
+            android:scaleType="fitXY"
+            android:onClick="onClick"
+            android:background="@drawable/red_gradient_background"/>
+
+
+        <ImageView
+            android:id="@+id/eye"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:src="@drawable/eye"
+            android:scaleType="fitXY"
+            android:onClick="onClick"
+            android:background="@drawable/red_gradient_background"/>
+
+
+        <ImageView
+            android:id="@+id/animateUnihorn"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:src="@drawable/animate_unihorn"
+            android:scaleType="fitXY"
+            android:onClick="onClick"
+            android:background="@drawable/red_gradient_background"/>
+
+
+
+    </LinearLayout>
+
+    <com.example.damyan.drawablebush.MyImageView
+        android:id="@+id/myView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+</LinearLayout>

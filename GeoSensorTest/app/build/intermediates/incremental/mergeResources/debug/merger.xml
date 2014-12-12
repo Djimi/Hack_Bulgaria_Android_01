@@ -24,11 +24,6 @@
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
-                name="activity_my"
-                path="F:\Android_projects\GeoSensorTest\app\src\main\res\layout\activity_my.xml"
-                qualifiers=""
-                type="layout" />
-            <file
                 name="my"
                 path="F:\Android_projects\GeoSensorTest\app\src\main\res\menu\my.xml"
                 qualifiers=""
@@ -88,6 +83,16 @@
                 path="F:\Android_projects\GeoSensorTest\app\src\main\res\drawable-mdpi\play.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
+            <file
+                name="geo_sensor_test"
+                path="F:\Android_projects\GeoSensorTest\app\src\main\res\layout\geo_sensor_test.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="code_previewer_layout"
+                path="F:\Android_projects\GeoSensorTest\app\src\main\res\layout\code_previewer_layout.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="F:\Android_projects\GeoSensorTest\app\build\generated\res\rs\debug" />
         <source path="F:\Android_projects\GeoSensorTest\app\build\generated\res\generated\debug" />
